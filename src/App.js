@@ -1,4 +1,5 @@
 import {FaTasks, FaCheckDouble, FaBusinessTime, FaChevronCircleUp} from 'react-icons/fa'
+import {GrAddCircle} from 'react-icons/gr'
 import './App.css';
 
 const App = () => {
@@ -40,7 +41,7 @@ const App = () => {
                 type="text"
                 placeholder='Enter your task'
                 />
-                <FaChevronCircleUp className='enter-icon'/>
+                <GrAddCircle className='enter-icon'/>
           </div>
           <div className="button-control">
               <div>                
