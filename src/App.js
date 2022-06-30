@@ -1,8 +1,8 @@
-import {FaTasks, FaCheckDouble, FaBusinessTime} from 'react-icons/fa'
+import {FaTasks, FaCheckDouble, FaBusinessTime, FaChevronCircleUp} from 'react-icons/fa'
 import './App.css';
 
 const App = () => {
-  const list = [1,2,3,4,5,6,7,8,9]
+  const list = [1,2,3,4,5,6,7,8,9,10,11,12]
   const list2 = [5];
   const createTasks = (list) => {
 
@@ -39,8 +39,8 @@ const App = () => {
               <input 
                 type="text"
                 placeholder='Enter your task'
-
                 />
+                <FaChevronCircleUp className='enter-icon'/>
           </div>
           <div className="button-control">
               <div>                
