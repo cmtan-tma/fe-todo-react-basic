@@ -1,38 +1,89 @@
+:root {
+  --padding: 10px 30px;
+  --padding-tb: 10px;
+  --padding-lr : 30px;
+  --margin: 20px 0;
+
+  --color-body: #F0EBE3;
+  --color-pink: #FBA1A1;
+  --color-font: #576F72;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *::after {
+  box-sizing: inherit;
+}
+
 .App {
+  width: 40%;
+  margin:0 auto;
+  padding: var(--padding-tb) 0;
+  background: var(--color-pink);
+  border: 1px solid white;
+  border-radius: 15px;
+}
+
+.body {
+  background: var(--color-body);
+  padding: var(--padding);
+}
+
+.header {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.task-list {
+  /* background: yellow; */
+  padding: var(--padding);
+  height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align:justify;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.task-list .task {
+  padding: var(--padding-tb) 0;
+  font-size: 2rem;
+  margin: 0 0 10px 0;
+  color: #576F72;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.task-list .border-bottom {
+  border-bottom: 1px solid #E4DCCF;
 }
 
-.App-link {
-  color: #61dafb;
+.input-bar {
+  margin: var(--margin)
+}
+.input-bar input {
+  padding: var(--padding);
+  width: 100%;
+  font-size: 1.5rem;
+  background: var(--color-body);
+  border-radius: 15px;
+  border: 2px solid var(--color-font);
+  color: var(--color-font);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-bar input:focus {
+  outline: none !important;
+  /* box-shadow: 0 0 10px #719ECE; */
+  border: 2px solid var(--color-pink);
+}
+
+.button-control {
+  text-align: center;
+}
+
+.button-control div{
+  display:inline-block;
+}
+.button-control p.icon {
+  /* padding: 20px; */
+  font-size: 2rem;
+  margin: 0 50px;
+  /* border: none; */
+  /* background: transparent */
 }
