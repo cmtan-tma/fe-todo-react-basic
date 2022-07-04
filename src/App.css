@@ -38,9 +38,11 @@ html {
   height: 55vh;
   overflow-x: hidden;
   overflow-y: auto;
-  text-align:justify;
-  padding-right: 10px;
+  text-align: justify;
+  padding: 20px;
   margin: 5px 0;
+  border: 3px solid var(--color-pink);
+  border-radius: 15px;
 }
 
 .task-list:hover {
@@ -55,11 +57,16 @@ html {
   justify-content: space-between;
 }
 
-.task-list .task .task-value {
+.task-list .task-value {
   width: 85%;
   display: flex;
   align-self: center;
   margin: 0;
+}
+
+.task-list .completed-text {
+  text-decoration: line-through;
+  color: green;
 }
 
 .task-list .task .task-icon {
