@@ -1,79 +1,12 @@
 import { useState, useEffect } from 'react';
-import {FaTasks, FaCheckDouble, FaBusinessTime, FaRocket, FaTelegram, FaCheckCircle, FaRegCircle} from 'react-icons/fa'
+import {FaTasks, FaCheckDouble, FaBusinessTime,FaTelegram, FaCheckCircle, FaRegCircle} from 'react-icons/fa'
 import './App.css';
+import ListView from './components/Listview';
+import ButtonController from './components/ButtonController';
 
-const Task = (props) => {
-
-  const setIcon = (location) => {
-    if (location === COMPLETED_TAB) {
-      return (<FaCheckCircle />);
-    } else if (location === TASKS_TAB) {
-      return (<FaRegCircle />);
-    }
-  }
-
-  return ( 
-    <div className={props.classes} onClick={() => props.handleTouch(props.index)}>
-      <p className="task-value">{props.task.value}</p>
-      <p className="task-icon">{setIcon(props.task.location)}</p>
-    </div> 
-  )
-}
-
-const ListView = (props) => {
-  let i = 0;
-
-  const renderTasks = (list) => {
-    if (list.length === 1) {
-      let classes = 'task';
-      if (list[0].location === COMPLETED_TAB) {
-        classes = `${classes} completed-text`
-      }
-      return (<Task classes={classes} key={Math.random(100*1).toString()} task={list[0]} handleTouch={props.handleTouch} index={0}/>)
-    }
-
-    const taskLists = [];
-    const length = list.length
-    for (i; i < length; i++) {
-      let classes = 'task border-bottom';
-      
-      if (i === length - 1) {
-        classes = 'task';
-      }
-
-      if (list[i].location === COMPLETED_TAB) {
-        classes = `${classes} completed-text`;
-      }
-
-      const taskElement = (<Task classes={classes} key={i.toString()} task={list[i]} handleTouch={props.handleTouch} index={i}/>)
-      taskLists.push(taskElement)
-    }
-
-    return taskLists;
-  }  
-  
-  return (
-    <div className="task-list">
-      {
-        renderTasks(props.viewData)
-      }
-    </div>
-  )
-}
-
-const ButtonController = (props) => {
-  const tabStr = props.tabType.toLowerCase();
-  return (
-    <div>                
-      <p className='icon-control icon' onClick={() => props.changeTab(props.tabType)}>{props.children}</p>
-      <p>{tabStr}</p>
-  </div>
-  );
-}
-
-const TASKS_TAB = 'TASKS';
-const COMPLETED_TAB = 'COMPLETED';
-const ALL_TAB = 'ALL';
+export const TASKS_TAB = 'TASKS';
+export const COMPLETED_TAB = 'COMPLETED';
+export const ALL_TAB = 'ALL';
 
 const App = () => {
   const [taskList, setTaskList] = useState([]);
@@ -157,7 +90,7 @@ const App = () => {
             <h1>Todos</h1>
           </div>
           <div>
-            <span>{tab} : {viewData.length}</span>
+            <span className="tab-info">{tab} : {viewData.length}</span>
           </div>
           <ListView viewData = {viewData} handleTouch = {(i) => handleTouch(i)}/>
           <div className="input-bar">

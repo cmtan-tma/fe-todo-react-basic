@@ -34,6 +34,11 @@ html {
   text-align: center;
 }
 
+.tab-info {
+  color: var(--color-pink);
+  font-weight: bold;
+}
+
 .task-list {
   height: 55vh;
   overflow-x: hidden;
